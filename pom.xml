@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.fileencryption</groupId>
+    <artifactId>FileEncryptionTool</artifactId>
+    <version>1.0</version>
+    <!-- "war" = Web Application Archive, the format Tomcat deploys -->
+    <packaging>war</packaging>
+    <name>File Encryption &amp; Decryption Tool</name>
+
+    <properties>
+        <!-- Java 11 or later (the compiler will target Java 11 bytecode) -->
+        <maven.compiler.release>11</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- Servlet 4.0 API = the version used by Tomcat 9 (package javax.servlet).
+             scope "provided": Tomcat already has it, so it is NOT packed into the WAR. -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!-- The WAR will be named FileEncryptionTool.war, so the app URL is /FileEncryptionTool/ -->
+        <finalName>FileEncryptionTool</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

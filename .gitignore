@@ -1,0 +1,24 @@
+# Maven build output (created by mvn package)
+target/
+
+# Compiled Java files
+*.class
+
+# Built WAR file
+*.war
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Temporary and log files
+*.log
+*.tmp
